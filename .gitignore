@@ -1,0 +1,19 @@
+# Old files from previous design - no longer needed
+assets/css/style.css  
+assets/js/main.js
+
+# Development files
+.DS_Store
+*.log
+node_modules/
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
