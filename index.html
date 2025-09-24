@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Legacie Ngwane | Data Analysis Portfolio</title>
-    <meta name="description" content="Data Analyst specializing in SQL, Power BI, and data visualization. Explore my portfolio showcasing real-world data analysis projects including US Household Income and World Life Expectancy studies.">
+    <title>Legacie Ngwane</title>
+    <meta name="description" content="Data Analyst | SQL Specialist | Data Visualization Expert - Legacie Ngwane specializes in transforming complex datasets into actionable insights.">
       
-    <!--💡UPDATE: Add your favicon here. You can generate one at realfavicongenerator.net-->
     <link rel="icon" type="image/png" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" href="/favicon-32x32.png">
     
-    <!-- Google Fonts for Elegant Typography -->
+    <!-- Google Fonts - SF Mono & Inter inspired fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -24,182 +23,209 @@
 </head>
 <body>
 
-<!-- Dark Mode Toggle -->
-<button class="theme-toggle" id="theme-toggle" title="Toggle dark/light mode">
-    <i class="fas fa-sun" id="theme-icon"></i>
-</button>
-
-<!-- HEADER SECTION -->
-<header>
-    <div class="container">
-        <h1>Legacie Ngwane</h1>
-        <p>Data Analyst | SQL Specialist | Data Visualization Expert</p>
-        <div class="social-links">
-            <a href="https://linkedin.com/in/legacie-ngwane" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/ngwanelegacie" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="mailto:legacie.ngwane@example.com" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="assets/Legacie_Ngwane_CV.pdf" download title="Download CV"><i class="fas fa-file-arrow-down"></i></a>
-        </div>
+    <!-- Email Link (Fixed Position) -->
+    <div class="email-link">
+        <a href="mailto:legacie.ngwane@example.com">legacie.ngwane@example.com</a>
     </div>
-</header>
 
-<!-- NAVIGATION -->
-<nav>
-    <div class="container">
+    <!-- Social Links (Fixed Position) -->
+    <div class="social-links-fixed">
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://github.com/ngwanelegacie" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/in/legacie-ngwane" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="assets/Legacie_Ngwane_CV.pdf" target="_blank" aria-label="Resume"><i class="fas fa-file-pdf"></i></a></li>
         </ul>
     </div>
-</nav>
 
-<!-- ABOUT SECTION -->
-<section id="about" class="section">
-    <div class="container">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <img src="assets/images/profile-placeholder.svg" alt="Legacie Ngwane" class="profile-photo">
-            <div class="about-text">
-                <!--💡UPDATE: Write your own 'About Me' text here-->
-                <p> I'm a data professional with expertise in transforming complex datasets into actionable insights. My work focuses on creating interactive visualizations and data-driven stories that help organizations make informed decisions.</p>
-                <p>With experience in Power BI, SQL, and data modeling, I specialize in developing comprehensive reports that reveal hidden patterns and trends in data. This portfolio showcases my projects across various sectors.</p>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-logo">
+                <a href="/">LN</a>
             </div>
-        </div>
-    </div>
-</section>
+            <div class="nav-menu">
+                <ol>
+                    <li><a href="#about"><span>01.</span> About</a></li>
+                    <li><a href="#experience"><!-- <span>02.</span> Experience --></a></li>
+                    <li><a href="#work"><span>02.</span> Work</a></li>
+                    <li><a href="#contact"><span>03.</span> Contact</a></li>
+                </ol>
+            </div>
+        </nav>
+    </header>
 
-<!-- PROJECTS SECTION -->
-<section id="projects" class="section">
-    <div class="container">
-        <h2>My Projects</h2>
-        <div class="projects-grid">
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-intro">Hi, my name is</h1>
+                <h2 class="hero-title">Legacie Ngwane.</h2>
+                <h3 class="hero-subtitle">I transform data into insights.</h3>
+                <p class="hero-description">
+                    I'm a data analyst specializing in SQL, data visualization, and turning complex datasets 
+                    into actionable business insights. Currently focused on building data-driven solutions 
+                    that help organizations make informed decisions.
+                </p>
+                <a href="#work" class="cta-button">Check out my work!</a>
+            </div>
+        </section>
 
-            <!-- US Household Income SQL Analysis -->
-             <div class="project-card">
-                <img src="assets/images/us-household-income-preview.jpg" alt="US Household Income SQL Analysis Preview" loading="lazy">
-                <div class="project-card-content">
-                    <h3>US Household Income SQL Analysis</h3>
-                    <p>Comprehensive SQL analysis of US household income data, exploring geographic patterns, demographic trends, and economic disparities across states and counties using advanced SQL techniques.</p>
-                    <div class="project-buttons">
-                        <a href="https://github.com/ngwanelegacie/us-household-income-sql" target="_blank" class="btn">View Code</a>
-                        <a href="https://github.com/ngwanelegacie/us-household-income-sql#readme" target="_blank" class="btn btn-secondary">Documentation</a>
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-heading">
+                    <span class="section-number">01.</span>
+                    About Me
+                </h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            Hello! I'm Legacie, a data professional with expertise in transforming complex datasets 
+                            into actionable insights. My work focuses on creating interactive visualizations and 
+                            data-driven stories that help organizations make informed decisions.
+                        </p>
+                        <p>
+                            With experience in Power BI, SQL, and data modeling, I specialize in developing 
+                            comprehensive reports that reveal hidden patterns and trends in data. I enjoy the 
+                            challenge of finding meaningful insights in complex datasets.
+                        </p>
+                        <p>Here are a few technologies I've been working with recently:</p>
+                        <ul class="skills-list">
+                            <li>SQL (MySQL, PostgreSQL)</li>
+                            <li>Power BI & DAX</li>
+                            <li>Python (Pandas, NumPy)</li>
+                            <li>Tableau</li>
+                            <li>Excel & Power Query</li>
+                            <li>Data Modeling</li>
+                        </ul>
+                    </div>
+                    <div class="about-pic">
+                        <div class="pic-wrapper">
+                            <img src="assets/images/profile-placeholder.svg" alt="Legacie Ngwane" />
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- World Life Expectancy SQL Analysis -->
-            <div class="project-card">
-                <img src="assets/images/world-life-expectancy-preview.jpg" alt="World Life Expectancy SQL Analysis Preview" loading="lazy">
-                <div class="project-card-content">
-                    <h3>World Life Expectancy SQL Analysis</h3>
-                    <p>In-depth SQL analysis of global life expectancy data, examining trends over time, correlations with economic indicators, and identifying factors affecting longevity across different countries.</p>
-                    <div class="project-buttons">
-                        <a href="https://github.com/ngwanelegacie/world-life-expectancy-sql" target="_blank" class="btn">View Code</a>
-                        <a href="https://github.com/ngwanelegacie/world-life-expectancy-sql#readme" target="_blank" class="btn btn-secondary">Documentation</a>
+        <!-- Work/Projects Section -->
+        <section id="work" class="work">
+            <div class="container">
+                <h2 class="section-heading">
+                    <span class="section-number">02.</span>
+                    Some Things I've Built
+                </h2>
+                <div class="projects-list">
+                    <!-- Project 1: US Household Income -->
+                    <div class="project">
+                        <div class="project-content">
+                            <div>
+                                <p class="project-overline">Featured Project</p>
+                                <h3 class="project-title">
+                                    <a href="https://github.com/ngwanelegacie/us-household-income-sql" target="_blank">
+                                        US Household Income SQL Analysis
+                                    </a>
+                                </h3>
+                                <div class="project-description">
+                                    <p>
+                                        Comprehensive SQL analysis of US household income data, exploring geographic patterns, 
+                                        demographic trends, and economic disparities across states and counties using advanced 
+                                        SQL techniques including window functions, CTEs, and data aggregation.
+                                    </p>
+                                </div>
+                                <ul class="project-tech-list">
+                                    <li>SQL</li>
+                                    <li>MySQL</li>
+                                    <li>Data Analysis</li>
+                                    <li>Geographic Data</li>
+                                </ul>
+                                <div class="project-links">
+                                    <a href="https://github.com/ngwanelegacie/us-household-income-sql" aria-label="GitHub Link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <a href="https://github.com/ngwanelegacie/us-household-income-sql" target="_blank">
+                                <img src="assets/images/us-household-income-preview.jpg" alt="US Household Income Analysis" />
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: World Life Expectancy -->
+                    <div class="project">
+                        <div class="project-content">
+                            <div>
+                                <p class="project-overline">Featured Project</p>
+                                <h3 class="project-title">
+                                    <a href="https://github.com/ngwanelegacie/world-life-expectancy-sql" target="_blank">
+                                        World Life Expectancy SQL Analysis
+                                    </a>
+                                </h3>
+                                <div class="project-description">
+                                    <p>
+                                        In-depth SQL analysis of global life expectancy data, examining trends over time, 
+                                        correlations with economic indicators, and identifying factors affecting longevity 
+                                        across different countries using advanced analytical SQL techniques.
+                                    </p>
+                                </div>
+                                <ul class="project-tech-list">
+                                    <li>SQL</li>
+                                    <li>MySQL</li>
+                                    <li>Time Series Analysis</li>
+                                    <li>Global Data</li>
+                                </ul>
+                                <div class="project-links">
+                                    <a href="https://github.com/ngwanelegacie/world-life-expectancy-sql" aria-label="GitHub Link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <a href="https://github.com/ngwanelegacie/world-life-expectancy-sql" target="_blank">
+                                <img src="assets/images/world-life-expectancy-preview.jpg" alt="World Life Expectancy Analysis" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-heading">
+                    <span class="section-number">03.</span>
+                    What's Next?
+                </h2>
+                <h2 class="contact-title">Get In Touch</h2>
+                <p class="contact-description">
+                    I'm currently looking for new opportunities to apply my data analysis skills. 
+                    Whether you have a question about my work or just want to say hi, I'll try 
+                    my best to get back to you!
+                </p>
+                <a href="mailto:legacie.ngwane@example.com" class="contact-button">Say Hello</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Designed & Built by <a href="https://github.com/ngwanelegacie" target="_blank">Legacie Ngwane</a></p>
         </div>
-    </div>
-</section>
-
-<!-- SKILLS SECTION -->
-<section id="skills" class="section">
-    <div class="container">
-        <h2>Technical Skillset</h2>
-        <div class="skills-table">
-            
-            <!--💡UPDATE: Customize your skills in each category-->
-            <!-- Column 1: Data Visualization -->
-            <div class="skill-column fade-in-delay-1">
-                <div class="skill-header">
-                    <i class="fas fa-chart-pie"></i>
-                    <h3>Data Visualization</h3>
-                </div>
-                <ul class="skill-list">
-                    <li>Power BI</li>
-                    <li>Tableau</li>
-                    <li>Looker Studio</li>
-                    <li>Excel Dashboards</li>
-                </ul>
-            </div>
-
-            <!-- Column 2: Data Analysis -->
-            <div class="skill-column fade-in-delay-2">
-                <div class="skill-header">
-                    <i class="fas fa-search-plus"></i>
-                    <h3>Data Analysis</h3>
-                </div>
-                <ul class="skill-list">
-                    <li>SQL</li>
-                    <li>Advanced Excel</li>
-                    <li>Python (Pandas)</li>
-                    <li>Google Sheets</li>
-                </ul>
-            </div>
-
-            <!-- Column 3: Data Modeling & ETL -->
-            <div class="skill-column fade-in-delay-3">
-                <div class="skill-header">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Data Modeling & ETL</h3>
-                </div>
-                <ul class="skill-list">
-                    <li>Power Query (M)</li>
-                    <li>DAX</li>
-                    <li>Star Schema Design</li>
-                    <li>ETL Processes</li>
-                </ul>
-            </div>
-
+        <div class="footer-social">
+            <ul>
+                <li><a href="https://github.com/ngwanelegacie" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://linkedin.com/in/legacie-ngwane" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="mailto:legacie.ngwane@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
+            </ul>
         </div>
-    </div>
-</section>
+    </footer>
 
-<!-- CONTACT FORM SECTION -->
-<section id="contact" class="section">
-    <div class="container">
-        <h2>Send me a message</h2>
-        
-        <form action="https://formsubmit.co/legacie.ngwane@example.com" method="POST" class="contact-form">
-            <p> Interested in collaborating or have questions about my work? I'd love to hear from you!</p>
-
-            <!-- Form Fields -->
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" placeholder="Your name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Your email" required>
-            </div>
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" name="subject" id="subject" placeholder="Subject" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea name="message" id="message" rows="6" placeholder="Your message" required></textarea>
-            </div>
-            
-            <!-- Submit Button -->
-            <button type="submit" class="btn">Send Message</button>
-
-        </form>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <div class="container">
-        <p>&copy; 2025 Legacie Ngwane. All rights reserved.</p>
-    </div>
-</footer>
-
-<script src="assets/js/main.js"></script>
-
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

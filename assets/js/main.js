@@ -1,104 +1,49 @@
-// Main navigation functionality
+// Brittany Chiang-inspired Portfolio JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    // Dark mode toggle functionality
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const body = document.body;
     
-    // Check for saved theme preference or default to light mode
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    body.setAttribute('data-theme', currentTheme);
-    
-    // Update icon based on current theme
-    function updateThemeIcon(theme) {
-        if (theme === 'dark') {
-            themeIcon.className = 'fas fa-moon';
-        } else {
-            themeIcon.className = 'fas fa-sun';
-        }
-    }
-    
-    updateThemeIcon(currentTheme);
-    
-    // Theme toggle event listener
-    themeToggle.addEventListener('click', function() {
-        const currentTheme = body.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        body.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-        
-        // Add a subtle animation to the toggle button
-        this.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            this.style.transform = '';
-        }, 150);
-    });
-
-    // Navigation scroll effect
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            nav.classList.add('nav-scrolled');
-        } else {
-            nav.classList.remove('nav-scrolled');
-        }
-    });
-
     // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
-
+            
             const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const navHeight = nav.offsetHeight;
-                const targetPosition = targetElement.offsetTop - navHeight - 20;
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const headerHeight = 100; // Height of fixed header
+                const targetPosition = targetSection.offsetTop - headerHeight;
                 
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
                 });
-                
-                // Update active navigation item
-                document.querySelectorAll('nav ul li a').forEach(link => {
-                    link.classList.remove('active');
-                });
-                this.classList.add('active');
             }
         });
     });
 
-    // Mobile menu toggle (if you add one later)
-    const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    if (mobileMenuButton) {
-        mobileMenuButton.addEventListener('click', function() {
-            const nav = document.querySelector('nav ul');
-            nav.classList.toggle('active');
-        });
-    }
-
     // Add active class to current navigation item based on scroll position
     function updateActiveNavigation() {
-        const sections = document.querySelectorAll('.section[id]');
-        const navLinks = document.querySelectorAll('nav ul li a');
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
         
         let current = '';
+        const scrollPosition = window.scrollY;
+        
         sections.forEach(section => {
-            const sectionTop = section.offsetTop;
+            const sectionTop = section.offsetTop - 150;
             const sectionHeight = section.clientHeight;
-            if (scrollY >= (sectionTop - 200)) {
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                 current = section.getAttribute('id');
             }
         });
 
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + current) {
+            const href = link.getAttribute('href');
+            if (href === '#' + current) {
                 link.classList.add('active');
             }
         });
@@ -108,43 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateActiveNavigation);
     updateActiveNavigation(); // Initialize
 
-    // Lazy loading for images
-    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.addEventListener('load', () => {
-                        img.classList.add('loaded');
-                    });
-                    if (img.complete) {
-                        img.classList.add('loaded');
-                    }
-                    observer.unobserve(img);
-                }
-            });
-        });
-
-        lazyImages.forEach(img => imageObserver.observe(img));
-    } else {
-        // Fallback for browsers without IntersectionObserver
-        lazyImages.forEach(img => img.classList.add('loaded'));
-    }
-
-    // Enhanced hover effects for project cards
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-12px) scale(1.02)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = '';
-        });
-    });
-
-    // Intersection Observer for fade-in animations
+    // Fade in animation for sections
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -154,27 +63,172 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Observe all sections and cards
-    document.querySelectorAll('.section, .project-card, .skill-column').forEach(el => {
+    // Observe all sections and other elements for fade-in animation
+    const elementsToObserve = document.querySelectorAll('section, .project, .skills-list li');
+    elementsToObserve.forEach(el => {
         observer.observe(el);
     });
 
-    // Project page specific functionality
-    if (window.location.pathname.includes('projects/')) {
-        console.log('Project page loaded');
+    // Logo hover effect
+    const logo = document.querySelector('.nav-logo a');
+    if (logo) {
+        logo.addEventListener('mouseenter', function() {
+            this.style.transform = 'translate(-4px, -4px)';
+            this.style.boxShadow = '4px 4px 0 0 var(--green)';
+        });
+        
+        logo.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.style.boxShadow = '';
+        });
     }
+
+    // Add subtle hover effects to project cards
+    const projectCards = document.querySelectorAll('.project');
+    projectCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const projectImage = this.querySelector('.project-image');
+            if (projectImage) {
+                projectImage.style.transform = 'translateY(-5px)';
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const projectImage = this.querySelector('.project-image');
+            if (projectImage) {
+                projectImage.style.transform = '';
+            }
+        });
+    });
+
+    // Typing animation for hero title (optional)
+    function typeWriter(element, text, speed = 100) {
+        let i = 0;
+        element.innerHTML = '';
+        
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            }
+        }
+        
+        type();
+    }
+
+    // Initialize typing animation for hero subtitle (optional - can be disabled)
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    if (heroSubtitle) {
+        const originalText = heroSubtitle.textContent;
+        // Uncomment the next line to enable typing effect
+        // typeWriter(heroSubtitle, originalText, 80);
+    }
+
+    // Email link hover effect
+    const emailLink = document.querySelector('.email-link a');
+    if (emailLink) {
+        emailLink.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px)';
+            this.style.color = 'var(--green)';
+        });
+        
+        emailLink.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.style.color = 'var(--light-slate)';
+        });
+    }
+
+    // Social links hover effects
+    const socialLinks = document.querySelectorAll('.social-links-fixed a');
+    socialLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px)';
+            this.style.color = 'var(--green)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.style.color = 'var(--light-slate)';
+        });
+    });
+
+    // Header background opacity on scroll
+    const header = document.querySelector('.header');
+    if (header) {
+        window.addEventListener('scroll', function() {
+            const scrolled = window.scrollY;
+            const rate = scrolled * -0.5;
+            
+            if (scrolled > 50) {
+                header.style.backgroundColor = 'rgba(10, 25, 47, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.backgroundColor = 'rgba(10, 25, 47, 0.85)';
+                header.style.backdropFilter = 'blur(10px)';
+            }
+        });
+    }
+
+    // Button hover effects
+    const buttons = document.querySelectorAll('.button, .cta-button, .contact-button');
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = 'var(--green-tint)';
+            this.style.transform = 'translateY(-2px)';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = 'transparent';
+            this.style.transform = '';
+        });
+    });
+
+    // Project links hover effects
+    const projectLinks = document.querySelectorAll('.project-links a');
+    projectLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.color = 'var(--green)';
+            this.style.transform = 'translateY(-2px)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.color = 'var(--lightest-slate)';
+            this.style.transform = '';
+        });
+    });
+
+    // Footer social links hover effects (for mobile)
+    const footerSocialLinks = document.querySelectorAll('.footer-social a');
+    footerSocialLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.color = 'var(--green)';
+            this.style.transform = 'translateY(-2px)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.color = 'var(--light-slate)';
+            this.style.transform = '';
+        });
+    });
+
+    // Initialize any additional animations or effects
+    console.log('Brittany Chiang-inspired portfolio loaded successfully!');
 });
 
-// Function to handle Power BI dashboard embedding
-function embedPowerBIDashboard() {
-    // This would be replaced with actual Power BI embedding code
-    console.log('Power BI dashboard embedded');
-}
+// Preloader (optional)
+window.addEventListener('load', function() {
+    document.body.classList.remove('loading');
+});
 
-// Initialize any additional components
-document.addEventListener('DOMContentLoaded', embedPowerBIDashboard);
+// Add loading class initially (optional)
+document.body.classList.add('loading');
+
+// Remove loading class after a short delay
+setTimeout(() => {
+    document.body.classList.remove('loading');
+}, 100);
