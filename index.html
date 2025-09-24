@@ -1,59 +1,1421 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vusumuzi Nkosi - IT & Mathematics Lecturer</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-navy: #020c1b;
+      --navy: #0a192f;
+      --light-navy: #112240;
+      --lightest-navy: #233554;
+      --navy-shadow: rgba(2, 12, 27, 0.7);
+      --dark-slate: #495670;
+      --slate: #8892b0;
+      --light-slate: #a8b2d1;
+      --lightest-slate: #ccd6f6;
+      --white: #e6f1ff;
+      --green: #64ffda;
+      --green-tint: rgba(100, 255, 218, 0.1);
+      --pink: #f57dff;
+      --blue: #57cbff;
+      --font-sans: 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+      --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+      --fz-xxs: 12px;
+      --fz-xs: 13px;
+      --fz-sm: 14px;
+      --fz-md: 16px;
+      --fz-lg: 18px;
+      --fz-xl: 20px;
+      --fz-xxl: 22px;
+      --fz-heading: 32px;
+      --border-radius: 4px;
+      --nav-height: 100px;
+      --nav-scroll-height: 70px;
+      --tab-height: 42px;
+      --tab-width: 120px;
+      --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+      --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+      --hamburger-width: 30px;
+      --ham-before: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+      --ham-before-active: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
+      --ham-after: bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      --ham-after-active: bottom 0.1s ease-out, transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      line-height: 1.3;
+      color: var(--slate);
+      background-color: var(--navy);
+      counter-reset: section;
+    }
+
+    .skip-to-content {
+      position: absolute;
+      top: auto;
+      left: -999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      z-index: -99;
+    }
+
+    .skip-to-content:focus,
+    .skip-to-content:active {
+      background-color: var(--green);
+      color: var(--navy);
+      top: 0px;
+      left: 0px;
+      width: auto;
+      height: auto;
+      overflow: auto;
+      z-index: 99;
+      padding: 18px 23px;
+      text-decoration: none;
+      border-radius: 0;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      z-index: 11;
+      padding: 0px 50px;
+      width: 100%;
+      height: var(--nav-height);
+      background-color: rgba(10, 25, 47, 0.85);
+      filter: none !important;
+      pointer-events: auto !important;
+      user-select: auto !important;
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo a {
+      color: var(--green);
+      width: 42px;
+      height: 42px;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin: 0 5px;
+      position: relative;
+      counter-increment: item 1;
+      font-size: var(--fz-xs);
+    }
+
+    .nav-links a {
+      padding: 10px;
+      text-decoration: none;
+      color: var(--lightest-slate);
+      transition: var(--transition);
+    }
+
+    .nav-links a:before {
+      content: '0' counter(item) '.';
+      margin-right: 5px;
+      color: var(--green);
+      font-size: var(--fz-xxs);
+      text-align: right;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: var(--green);
+    }
+
+    .resume-button {
+      color: var(--green);
+      background-color: transparent;
+      border: 1px solid var(--green);
+      border-radius: var(--border-radius);
+      padding: 0.75rem 1rem;
+      font-size: var(--fz-xs);
+      font-family: var(--font-mono);
+      line-height: 1;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-left: 15px;
+    }
+
+    .resume-button:hover,
+    .resume-button:focus,
+    .resume-button:active {
+      background-color: var(--green-tint);
+      outline: none;
+    }
+
+    /* Main Content */
+    main {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1600px;
+      min-height: 100vh;
+      padding: 0 150px;
+    }
+
+    section {
+      margin: 0 auto;
+      padding: 100px 0;
+      max-width: 1000px;
+    }
+
+    .numbered-heading {
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin: 10px 0 40px;
+      width: 100%;
+      font-size: clamp(26px, 5vw, var(--fz-heading));
+      white-space: nowrap;
+    }
+
+    .numbered-heading:before {
+      position: relative;
+      bottom: 4px;
+      counter-increment: section 1;
+      content: '0' counter(section) '.';
+      margin-right: 10px;
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
+      font-weight: 400;
+    }
+
+    .numbered-heading:after {
+      content: '';
+      display: block;
+      position: relative;
+      top: -5px;
+      width: 300px;
+      height: 1px;
+      margin-left: 20px;
+      background-color: var(--lightest-navy);
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      min-height: 100vh;
+      height: 100vh;
+      padding: 0;
+    }
+
+    .hero h1 {
+      margin: 0 0 30px 4px;
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
+      font-weight: 400;
+    }
+
+    .hero h2 {
+      font-size: clamp(40px, 8vw, 80px);
+      color: var(--lightest-slate);
+    }
+
+    .hero h3 {
+      margin-top: 5px;
+      font-size: clamp(40px, 8vw, 80px);
+      color: var(--slate);
+    }
+
+    .hero p {
+      margin: 20px 0 0;
+      max-width: 540px;
+      font-size: var(--fz-xl);
+    }
+
+    .hero .email-link {
+      color: var(--green);
+      background-color: transparent;
+      border: 1px solid var(--green);
+      border-radius: var(--border-radius);
+      padding: 1.25rem 1.75rem;
+      font-size: var(--fz-sm);
+      font-family: var(--font-mono);
+      line-height: 1;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: 50px;
+      display: inline-block;
+    }
+
+    .hero .email-link:hover,
+    .hero .email-link:focus,
+    .hero .email-link:active {
+      background-color: var(--green-tint);
+      outline: none;
+    }
+
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 50px;
+    }
+
+    .about-text p {
+      margin: 0 0 15px;
+    }
+
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(140px, 200px));
+      gap: 0px 10px;
+      padding: 0;
+      margin: 20px 0 0 0;
+      overflow: hidden;
+      list-style: none;
+    }
+
+    .skills-list li {
+      position: relative;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      font-family: var(--font-mono);
+      font-size: var(--fz-xs);
+    }
+
+    .skills-list li:before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-size: var(--fz-sm);
+      line-height: 12px;
+    }
+
+    .about-pic {
+      position: relative;
+      max-width: 300px;
+    }
+
+    .about-pic .wrapper {
+      box-shadow: 0 10px 30px -15px var(--navy-shadow);
+      transition: var(--transition);
+      display: block;
+      position: relative;
+      width: 100%;
+      border-radius: var(--border-radius);
+      background-color: var(--green);
+    }
+
+    .about-pic .wrapper:hover,
+    .about-pic .wrapper:focus {
+      box-shadow: 0 20px 30px -15px var(--navy-shadow);
+      transform: translate(-4px, -4px);
+    }
+
+    .about-pic .wrapper:hover .img,
+    .about-pic .wrapper:focus .img {
+      filter: none;
+      mix-blend-mode: normal;
+    }
+
+    .about-pic .wrapper .img {
+      position: relative;
+      border-radius: var(--border-radius);
+      mix-blend-mode: multiply;
+      filter: grayscale(100%) contrast(1);
+      transition: var(--transition);
+      width: 100%;
+      max-width: 100%;
+      vertical-align: middle;
+    }
+
+    .about-pic .wrapper:before,
+    .about-pic .wrapper:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+    }
+
+    .about-pic .wrapper:before {
+      top: 0;
+      left: 0;
+      background-color: var(--navy);
+      mix-blend-mode: screen;
+    }
+
+    .about-pic .wrapper:after {
+      border: 2px solid var(--green);
+      top: 20px;
+      left: 20px;
+      z-index: -1;
+    }
+
+    /* Experience Section */
+    .jobs-tabs {
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    .jobs-tablist {
+      position: relative;
+      z-index: 3;
+      width: max-content;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .jobs-tablist:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: var(--tab-height);
+      background-color: var(--green);
+      transform: translateY(0px);
+      transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+      transition-delay: 0.1s;
+    }
+
+    .jobs-tab {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: var(--tab-height);
+      padding: 0 20px 2px;
+      border: none;
+      border-left: 2px solid var(--lightest-navy);
+      background-color: transparent;
+      color: var(--slate);
+      font-family: var(--font-mono);
+      font-size: var(--fz-xs);
+      text-align: left;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .jobs-tab:hover,
+    .jobs-tab:active,
+    .jobs-tab:focus {
+      color: var(--green);
+      outline: 0;
+      border-left-color: var(--green);
+      background-color: var(--light-navy);
+    }
+
+    .jobs-tab.active {
+      color: var(--green);
+      border-left-color: var(--green);
+    }
+
+    .jobs-content {
+      width: 100%;
+      height: auto;
+      padding-top: 10px;
+      padding-left: 30px;
+    }
+
+    .jobs-tabpanel {
+      width: 100%;
+      height: auto;
+      padding: 10px 5px;
+    }
+
+    .jobs-tabpanel h3 {
+      margin-bottom: 2px;
+      font-size: var(--fz-xxl);
+      font-weight: 500;
+      line-height: 1.3;
+      color: var(--lightest-slate);
+    }
+
+    .jobs-tabpanel h3 .company {
+      color: var(--green);
+    }
+
+    .jobs-tabpanel .range {
+      margin-bottom: 25px;
+      color: var(--light-slate);
+      font-family: var(--font-mono);
+      font-size: var(--fz-xs);
+    }
+
+    .jobs-tabpanel ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      font-size: var(--fz-lg);
+    }
+
+    .jobs-tabpanel li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 10px;
+    }
+
+    .jobs-tabpanel li:before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-size: var(--fz-sm);
+      line-height: 18px;
+    }
+
+    /* Projects Section */
+    .projects-grid {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .project {
+      position: relative;
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(12, 1fr);
+      align-items: center;
+      margin-bottom: 100px;
+    }
+
+    .project:not(:last-of-type) {
+      margin-bottom: 100px;
+    }
+
+    .project-content {
+      position: relative;
+      grid-column: 1 / 7;
+      grid-row: 1 / -1;
+    }
+
+    .project.odd .project-content {
+      grid-column: 7 / -1;
+      text-align: right;
+    }
+
+    .project-overline {
+      margin: 10px 0;
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-size: var(--fz-xs);
+      font-weight: 400;
+    }
+
+    .project-title {
+      color: var(--lightest-slate);
+      font-size: clamp(24px, 5vw, 28px);
+    }
+
+    .project-title a {
+      position: static;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .project-title a:before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .project-description {
+      position: relative;
+      z-index: 2;
+      padding: 25px;
+      border-radius: var(--border-radius);
+      background-color: var(--light-navy);
+      color: var(--light-slate);
+      font-size: var(--fz-lg);
+      box-shadow: 0 10px 30px -15px var(--navy-shadow);
+      transition: var(--transition);
+    }
+
+    .project.odd .project-description {
+      text-align: left;
+    }
+
+    .project-tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+      margin: 25px 0 10px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .project.odd .project-tech-list {
+      justify-content: flex-end;
+    }
+
+    .project-tech-list li {
+      margin: 0 20px 5px 0;
+      color: var(--light-slate);
+      font-family: var(--font-mono);
+      font-size: var(--fz-xs);
+      white-space: nowrap;
+    }
+
+    .project.odd .project-tech-list li {
+      margin: 0 0 5px 20px;
+    }
+
+    .project-links {
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin-top: 10px;
+      margin-left: -10px;
+      color: var(--lightest-slate);
+    }
+
+    .project.odd .project-links {
+      justify-content: flex-end;
+      margin-left: 0;
+      margin-right: -10px;
+    }
+
+    .project-links a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      color: var(--lightest-slate);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .project-links a:hover,
+    .project-links a:focus {
+      color: var(--green);
+    }
+
+    .project-image {
+      grid-column: 6 / -1;
+      grid-row: 1 / -1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project.odd .project-image {
+      grid-column: 1 / 8;
+    }
+
+    .project-image a {
+      width: 100%;
+      height: 100%;
+      background-color: var(--green);
+      border-radius: var(--border-radius);
+      vertical-align: middle;
+      display: block;
+      position: relative;
+      mix-blend-mode: multiply;
+      filter: grayscale(100%) contrast(1) brightness(90%);
+      transition: var(--transition);
+    }
+
+    .project-image a:hover,
+    .project-image a:focus {
+      background: transparent;
+      outline: 0;
+      filter: none;
+    }
+
+    .project-image a:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--navy);
+      mix-blend-mode: screen;
+      transition: var(--transition);
+    }
+
+    .project-image a:hover:before,
+    .project-image a:focus:before {
+      background: transparent;
+    }
+
+    .project-image img {
+      border-radius: var(--border-radius);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    /* Other Projects Section */
+    .projects-grid-other {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 15px;
+      position: relative;
+    }
+
+    .project-other {
+      position: relative;
+      cursor: default;
+      transition: var(--transition);
+    }
+
+    .project-other:hover,
+    .project-other:focus-within {
+      transform: translateY(-7px);
+    }
+
+    .project-other-inner {
+      box-shadow: 0 10px 30px -15px var(--navy-shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: column;
+      min-height: 350px;
+      height: 350px;
+      padding: 2rem 1.75rem;
+      border-radius: var(--border-radius);
+      background-color: var(--light-navy);
+      transition: var(--transition);
+      overflow: auto;
+    }
+
+    .project-other:hover .project-other-inner,
+    .project-other:focus-within .project-other-inner {
+      box-shadow: 0 20px 30px -15px var(--navy-shadow);
+    }
+
+    .project-other-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 35px;
+    }
+
+    .folder {
+      color: var(--green);
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .project-other-links {
+      display: flex;
+      align-items: center;
+      margin-right: -10px;
+      color: var(--light-slate);
+    }
+
+    .project-other-links a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px 7px;
+      color: var(--light-slate);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .project-other-links a:hover,
+    .project-other-links a:focus {
+      color: var(--green);
+    }
+
+    .project-other-title {
+      margin: 0 0 10px;
+      color: var(--lightest-slate);
+      font-size: var(--fz-xxl);
+    }
+
+    .project-other-title a {
+      position: static;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .project-other-title a:before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .project-other-description {
+      color: var(--light-slate);
+      font-size: var(--fz-sm);
+    }
+
+    .project-other-tech-list {
+      display: flex;
+      align-items: flex-end;
+      flex-grow: 1;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 20px 0 0 0;
+      list-style: none;
+    }
+
+    .project-other-tech-list li {
+      font-family: var(--font-mono);
+      font-size: var(--fz-xxs);
+      line-height: 1.75;
+      color: var(--light-slate);
+    }
+
+    .project-other-tech-list li:not(:last-of-type) {
+      margin-right: 15px;
+    }
+
+    /* Contact Section */
+    .contact {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 100px;
+    }
+
+    .contact .overline {
+      display: block;
+      margin-bottom: 20px;
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-size: var(--fz-md);
+      font-weight: 400;
+    }
+
+    .contact .title {
+      font-size: clamp(40px, 5vw, 60px);
+      color: var(--lightest-slate);
+    }
+
+    .contact .email-link {
+      color: var(--green);
+      background-color: transparent;
+      border: 1px solid var(--green);
+      border-radius: var(--border-radius);
+      padding: 1.25rem 1.75rem;
+      font-size: var(--fz-sm);
+      font-family: var(--font-mono);
+      line-height: 1;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: 50px;
+      display: inline-block;
+    }
+
+    .contact .email-link:hover,
+    .contact .email-link:focus,
+    .contact .email-link:active {
+      background-color: var(--green-tint);
+      outline: none;
+    }
+
+    /* Social Links */
+    .social {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      bottom: 0;
+      left: 40px;
+      right: auto;
+      z-index: 10;
+      color: var(--light-slate);
+    }
+
+    .social:after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 90px;
+      margin: 0 auto;
+      background-color: var(--light-slate);
+    }
+
+    .social ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .social a {
+      padding: 10px;
+      color: var(--light-slate);
+      text-decoration: none;
+      transition: var(--transition);
+      transform: translateY(-3px);
+    }
+
+    .social a:hover,
+    .social a:focus {
+      color: var(--green);
+    }
+
+    .email {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      bottom: 0;
+      right: 40px;
+      left: auto;
+      z-index: 10;
+      color: var(--light-slate);
+    }
+
+    .email:after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 90px;
+      margin: 0 auto;
+      background-color: var(--light-slate);
+    }
+
+    .email a {
+      margin: 20px auto;
+      padding: 10px;
+      font-family: var(--font-mono);
+      font-size: var(--fz-xxs);
+      line-height: var(--fz-lg);
+      letter-spacing: 0.1em;
+      writing-mode: vertical-rl;
+      color: var(--light-slate);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .email a:hover,
+    .email a:focus {
+      color: var(--green);
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+    footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: auto;
+      min-height: 70px;
+      padding: 15px;
+      text-align: center;
+    }
+
+    footer .credits {
+      color: var(--light-slate);
+      font-family: var(--font-mono);
+      font-size: var(--fz-xxs);
+      line-height: 1;
+    }
+
+    footer .credits a {
+      color: var(--light-slate);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    footer .credits a:hover,
+    footer .credits a:focus {
+      color: var(--green);
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      main {
+        padding: 0 25px;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      header {
+        padding: 0 25px;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .about-pic {
+        margin: 0 auto;
+      }
+
+      .jobs-tabs {
+        flex-direction: column;
+      }
+
+      .jobs-tablist {
+        display: flex;
+        overflow-x: auto;
+        width: calc(100% + 100px);
+        padding-left: 50px;
+        margin-left: -50px;
+        margin-bottom: 30px;
+      }
+
+      .jobs-tablist:before {
+        top: auto;
+        bottom: 0;
+        width: var(--tab-width);
+        height: 2px;
+        transform: translateX(0px);
+      }
+
+      .jobs-tab {
+        flex-shrink: 0;
+        padding: 0 15px 2px;
+        border-left: 0;
+        border-bottom: 2px solid var(--lightest-navy);
+        min-width: var(--tab-width);
+        text-align: center;
+      }
+
+      .jobs-content {
+        padding-left: 0;
+      }
+
+      .project {
+        grid-template-columns: 1fr;
+        margin-bottom: 70px;
+      }
+
+      .project-content {
+        padding: 40px 40px 30px;
+        z-index: 5;
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+        order: 2;
+      }
+
+      .project.odd .project-content {
+        grid-column: 1 / -1;
+        text-align: left;
+        order: 2;
+      }
+
+      .project-image {
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+        order: 1;
+      }
+
+      .project.odd .project-image {
+        grid-column: 1 / -1;
+        order: 1;
+      }
+
+      .project-description {
+        padding: 20px 0;
+        background-color: transparent;
+        box-shadow: none;
+      }
+
+      .project-image a:before {
+        background: var(--navy);
+        opacity: 0.25;
+      }
+
+      .projects-grid-other {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+
+      .social,
+      .email {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      main {
+        padding: 0 15px;
+      }
+
+      header {
+        padding: 0 15px;
+      }
+
+      .hero h2,
+      .hero h3 {
+        font-size: clamp(35px, 8vw, 60px);
+      }
+
+      .numbered-heading:after {
+        width: 100%;
+      }
+
+      .projects-grid-other {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .project-other-inner {
+        padding: 1.5rem;
+        min-height: 300px;
+        height: 300px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <a class="skip-to-content" href="#content">Skip to Content</a>
+
+  <header>
+    <div class="logo">
+      <a href="/" aria-label="home">VN</a>
+    </div>
     <nav>
-        <ul>
-            <li><a href="#about">01. About</a></li>
-            <li><a href="#experience">02. Experience</a></li>
-            <li><a href="#work">03. Work</a></li>
-            <li><a href="#contact">04. Contact</a></li>
-        </ul>
+      <ol class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#jobs">Experience</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+      <a href="/resume.pdf" class="resume-button">Resume</a>
     </nav>
-    <header class="hero">
-        <div class="hero-content">
-            <div class="profile-picture">
-                <img src="profile.jpg" alt="Profile Picture">
-            </div>
-            <div class="hero-text">
-                <h1>Hello, I'm a Data Analyst</h1>
-                <p>Welcome to my portfolio where I showcase my skills and projects.</p>
-            </div>
-        </div>
-    </header>
+  </header>
+
+  <div class="social">
+    <ul>
+      <li>
+        <a href="https://github.com/ngwanelegacie" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" style="width:20px;height:20px;"></path></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://youtube.com/@ngwanelegacie" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-youtube"><title>YouTube</title><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" style="width:20px;height:20px;"></path><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" style="width:20px;height:20px;"></polygon></svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="email">
+    <a href="mailto:nkosivusumuzi0@gmail.com">nkosivusumuzi0@gmail.com</a>
+  </div>
+
+  <main id="content">
+    <section class="hero">
+      <h1>Hi, my name is</h1>
+      <h2>Vusumuzi Nkosi.</h2>
+      <h3>I build things for the web.</h3>
+      <p>I'm an IT and Mathematics lecturer specializing in teaching programming fundamentals and advanced mathematical concepts. Currently, I'm focused on exploring cloud infrastructure and data analysis projects.</p>
+      <a href="mailto:nkosivusumuzi0@gmail.com" class="email-link">Get In Touch</a>
+    </section>
+
     <section id="about">
-        <h2>About Me</h2>
-        <p>I am a professional data analyst with a passion for data-driven decision making...</p>
-    </section>
-    <section id="experience">
-        <h2>Experience</h2>
-        <p>I have worked at Majuba TVET College where I...</p>
-    </section>
-    <section id="work">
-        <h2>My Projects</h2>
-        <h3>SQL Projects</h3>
-        <ul>
-            <li>US Household Income Analysis</li>
-            <li>World Life Expectancy Visualization</li>
-        </ul>
-    </section>
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
+      <h2 class="numbered-heading">About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Hello! My name is Vusumuzi and I enjoy creating educational content and building solutions that help students learn complex concepts. My interest in teaching and technology started when I began helping fellow students understand programming fundamentals.</p>
+          <p>Fast-forward to today, and I've had the privilege of teaching at a <a href="https://majuba.edu.za/">technical college</a>, developing curriculum, and helping students launch their careers in IT and mathematics.</p>
+          <p>My main focus these days is teaching core IT subjects while exploring cloud infrastructure and data analysis in my spare time. I also recently launched <a href="https://youtube.com/@ngwanelegacie">a YouTube channel</a> where I share educational content.</p>
+          <p>Here are a few technologies I've been working with recently:</p>
+          <ul class="skills-list">
+            <li>SQL & Database Management</li>
+            <li>Python Programming</li>
+            <li>AWS Cloud Services</li>
             <li>Data Analysis</li>
-            <li>SQL</li>
-            <li>Python</li>
-            <li>Data Visualization</li>
-        </ul>
+            <li>Mathematical Modeling</li>
+            <li>Educational Technology</li>
+          </ul>
+        </div>
+        <div class="about-pic">
+          <div class="wrapper">
+            <img src="https://via.placeholder.com/500x500/64ffda/0a192f?text=VN" alt="Headshot" class="img" />
+          </div>
+        </div>
+      </div>
     </section>
-    <footer>
-        <h2>Contact</h2>
-        <p>Feel free to reach out to me via email or LinkedIn...</p>
-    </footer>
+
+    <section id="jobs">
+      <h2 class="numbered-heading">Where I've Worked</h2>
+      <div class="jobs-tabs">
+        <div role="tablist" class="jobs-tablist" aria-label="Job tabs">
+          <button class="jobs-tab active" role="tab" aria-selected="true" aria-controls="panel-0" id="tab-0" tabindex="0">
+            <span>Majuba TVET</span>
+          </button>
+        </div>
+        <div class="jobs-content">
+          <div class="jobs-tabpanel" role="tabpanel" tabindex="0" id="panel-0" aria-labelledby="tab-0">
+            <h3>
+              <span>IT and Mathematics Lecturer</span>
+              <span class="company">
+                &nbsp;@&nbsp;
+                <a href="https://majuba.edu.za/" target="_blank" rel="noopener noreferrer">Majuba TVET College</a>
+              </span>
+            </h3>
+            <p class="range">February 2017 - Present</p>
+            <div>
+              <ul>
+                <li>Instructing college-level students in core IT subjects and programming fundamentals, helping over 200+ students annually develop technical skills essential for their career advancement</li>
+                <li>Teaching advanced mathematical concepts with technical applications, bridging the gap between theoretical mathematics and practical IT implementations</li>
+                <li>Designing comprehensive curriculum and assessment strategies for IT and Mathematics programs, ensuring alignment with industry standards and student learning outcomes</li>
+                <li>Providing dedicated technical guidance and problem-solving support to students, maintaining an average student satisfaction rating of 95% through personalized mentoring and support</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="numbered-heading">Some Things I've Built</h2>
+      <ul class="projects-grid">
+        <li class="project">
+          <div class="project-content">
+            <div>
+              <p class="project-overline">Featured Project</p>
+              <h3 class="project-title">
+                <a href="https://github.com/ngwanelegacie/us-household-income-sql" target="_blank" rel="noopener noreferrer">US Household Income SQL Analysis</a>
+              </h3>
+              <div class="project-description">
+                <p>A comprehensive SQL data analysis project examining US household income patterns across different states and demographics. Features data cleaning, exploratory analysis, and statistical insights using advanced SQL techniques.</p>
+              </div>
+              <ul class="project-tech-list">
+                <li>SQL</li>
+                <li>MySQL</li>
+                <li>Data Analysis</li>
+                <li>Statistical Analysis</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/ngwanelegacie/us-household-income-sql" aria-label="GitHub Link" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" style="width:20px;height:20px;"></path></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-image">
+            <a href="https://github.com/ngwanelegacie/us-household-income-sql" target="_blank" rel="noopener noreferrer">
+              <img src="https://via.placeholder.com/600x400/64ffda/0a192f?text=SQL+Analysis" alt="US Household Income SQL Analysis" />
+            </a>
+          </div>
+        </li>
+
+        <li class="project odd">
+          <div class="project-content">
+            <div>
+              <p class="project-overline">Featured Project</p>
+              <h3 class="project-title">
+                <a href="https://github.com/ngwanelegacie/world-life-expectancy-sql" target="_blank" rel="noopener noreferrer">World Life Expectancy SQL Analysis</a>
+              </h3>
+              <div class="project-description">
+                <p>An in-depth SQL analysis of global life expectancy data, exploring correlations between life expectancy and various socioeconomic factors. Includes data visualization recommendations and trend analysis across different countries and time periods.</p>
+              </div>
+              <ul class="project-tech-list">
+                <li>SQL</li>
+                <li>MySQL</li>
+                <li>Data Analysis</li>
+                <li>Trend Analysis</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/ngwanelegacie/world-life-expectancy-sql" aria-label="GitHub Link" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" style="width:20px;height:20px;"></path></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-image">
+            <a href="https://github.com/ngwanelegacie/world-life-expectancy-sql" target="_blank" rel="noopener noreferrer">
+              <img src="https://via.placeholder.com/600x400/64ffda/0a192f?text=Life+Expectancy" alt="World Life Expectancy SQL Analysis" />
+            </a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="other-projects">
+      <h2 class="numbered-heading">Other Noteworthy Projects</h2>
+      <ul class="projects-grid-other">
+        <li class="project-other">
+          <div class="project-other-inner">
+            <header>
+              <div class="project-other-top">
+                <div class="folder">
+                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder"><title>Folder</title><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+                <div class="project-other-links">
+                  <a href="#" aria-label="External Link">
+                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title>External Link</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15,3 21,3 21,9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-other-title">
+                <a href="#">Metabase on ECS Fargate</a>
+              </h3>
+              <div class="project-other-description">
+                <p>AWS reference deployment featuring VPC, ALB, target group, health checks, IAM, secrets management, and scalability. IaC ready with hardened security groups and zero downtime rolling deployments.</p>
+              </div>
+            </header>
+            <footer>
+              <ul class="project-other-tech-list">
+                <li>AWS</li>
+                <li>ECS</li>
+                <li>Fargate</li>
+                <li>ALB</li>
+                <li>IAM</li>
+              </ul>
+            </footer>
+          </div>
+        </li>
+
+        <li class="project-other">
+          <div class="project-other-inner">
+            <header>
+              <div class="project-other-top">
+                <div class="folder">
+                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder"><title>Folder</title><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+                <div class="project-other-links">
+                  <a href="#" aria-label="External Link">
+                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title>External Link</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15,3 21,3 21,9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-other-title">
+                <a href="#">S3 Static Website with CloudFront</a>
+              </h3>
+              <div class="project-other-description">
+                <p>Personal site deployed on S3 and CloudFront with OAC policy and TLS certificate in Route 53. Features OAC bucket policy, index fallback, and optimized cache strategy.</p>
+              </div>
+            </header>
+            <footer>
+              <ul class="project-other-tech-list">
+                <li>S3</li>
+                <li>CloudFront</li>
+                <li>Route 53</li>
+                <li>TLS</li>
+                <li>OAC</li>
+              </ul>
+            </footer>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2 class="numbered-heading overline">What's Next?</h2>
+      <div class="contact">
+        <h2 class="title">Get In Touch</h2>
+        <p>Although I'm not currently looking for new opportunities, my inbox is always open. Whether you have a question about teaching, technology, or just want to say hi, I'll try my best to get back to you!</p>
+        <a class="email-link" href="mailto:nkosivusumuzi0@gmail.com">Say Hello</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="credits">
+      <a href="https://github.com/bchiang7/v4" target="_blank" rel="noopener noreferrer">
+        Design by Brittany Chiang
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Header scroll effect
+    let scrollTimer = null;
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 100) {
+        header.style.height = 'var(--nav-scroll-height)';
+        header.style.boxShadow = '0 10px 30px -10px var(--navy-shadow)';
+      } else {
+        header.style.height = 'var(--nav-height)';
+        header.style.boxShadow = 'none';
+      }
+    });
+
+    // Add fade-in animation on load
+    window.addEventListener('load', function() {
+      document.body.style.visibility = 'visible';
+      document.body.style.opacity = '1';
+    });
+  </script>
 </body>
 </html>
