@@ -244,8 +244,8 @@ h6 {
   bottom: 0;
   right: 40px;
   z-index: 10;
-  writing-mode: vertical-lr;
-  text-orientation: mixed;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 }
 
 @media (max-width: 1080px) {
@@ -318,8 +318,8 @@ h6 {
 }
 
 .social-links-fixed ul li {
-  margin: 0;
-  padding: 5px;
+  margin: 0 0 10px 0;
+  padding: 0;
 }
 
 .social-links-fixed ul li a {
@@ -450,6 +450,34 @@ h6 {
   color: var(--green);
   font-size: var(--fz-xxs);
   margin-right: 5px;
+}
+
+.header .nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-cv-button {
+  color: var(--green);
+  background-color: transparent;
+  border: 1px solid var(--green);
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1rem;
+  font-size: var(--fz-xs);
+  font-family: var(--font-mono);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  user-select: none;
+}
+
+.nav-cv-button:hover,
+.nav-cv-button:focus {
+  background-color: var(--green-tint);
+  outline: none;
+  transform: translateY(-1px);
 }
 
 /* Hero section */
