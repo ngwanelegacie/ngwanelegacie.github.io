@@ -499,19 +499,19 @@ h6 {
 }
 
 .hero .hero-subtitle {
-  font-size: clamp(40px, 8vw, 80px);
+  font-size: clamp(24px, 5vw, 40px);
   margin-top: 10px;
   color: var(--slate);
-  line-height: 0.9;
+  line-height: 1.2;
 }
 
 .hero .hero-description {
-  margin: 20px 0 0;
+  margin: 30px 0 0;
   max-width: 540px;
 }
 
 .hero .cta-button {
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
 /* Section headings */
