@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vusumuzi Nkosi - IT & Mathematics Lecturer</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -147,20 +147,23 @@
       counter-increment: item 1;
       font-size: var(--fz-xs);
     }
+    
+    .nav-links li a:before {
+      content: '0' counter(item) '.';
+      margin-right: 5px;
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-size: var(--fz-xxs);
+      text-align: right;
+    }
 
     .nav-links a {
       padding: 10px;
       text-decoration: none;
       color: var(--lightest-slate);
+      font-family: var(--font-mono);
+      font-size: var(--fz-xs);
       transition: var(--transition);
-    }
-
-    .nav-links a:before {
-      content: '0' counter(item) '.';
-      margin-right: 5px;
-      color: var(--green);
-      font-size: var(--fz-xxs);
-      text-align: right;
     }
 
     .nav-links a:hover,
@@ -188,6 +191,8 @@
     .resume-button:active {
       background-color: var(--green-tint);
       outline: none;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 17px var(--green-tint);
     }
 
     /* Main Content */
@@ -295,6 +300,9 @@
     .hero .email-link:active {
       background-color: var(--green-tint);
       outline: none;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px -15px var(--green-tint);
+    }
     }
 
     /* About Section */
@@ -668,6 +676,17 @@
       mix-blend-mode: multiply;
       filter: grayscale(100%) contrast(1) brightness(90%);
       transition: var(--transition);
+      overflow: hidden;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--border-radius);
+      mix-blend-mode: multiply;
+      filter: grayscale(100%) contrast(1);
+      transition: var(--transition);
     }
 
     .project-image a:hover,
@@ -675,6 +694,12 @@
       background: transparent;
       outline: 0;
       filter: none;
+    }
+
+    .project-image a:hover img,
+    .project-image a:focus img {
+      filter: none;
+      mix-blend-mode: normal;
     }
 
     .project-image a:before {
@@ -744,6 +769,7 @@
     .project-other:hover .project-other-inner,
     .project-other:focus-within .project-other-inner {
       box-shadow: 0 20px 30px -15px var(--navy-shadow);
+      transform: translateY(-7px);
     }
 
     .project-other-top {
@@ -874,6 +900,8 @@
     .contact .email-link:active {
       background-color: var(--green-tint);
       outline: none;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px -15px var(--green-tint);
     }
 
     /* Social Links */
@@ -1143,7 +1171,7 @@
         <li><a href="#projects">Work</a></li>
         <li><a href="#contact">Contact</a></li>
       </ol>
-      <a href="/resume.pdf" class="resume-button">Resume</a>
+      <a href="assets/Vusumuzi_Nkosi_CV.pdf" class="resume-button">Resume</a>
     </nav>
   </header>
 
@@ -1194,7 +1222,7 @@
         </div>
         <div class="about-pic">
           <div class="wrapper">
-            <img src="https://via.placeholder.com/500x500/64ffda/0a192f?text=VN" alt="Headshot" class="img" />
+            <img src="assets/images/profile.jpg" alt="Headshot" class="img" />
           </div>
         </div>
       </div>
@@ -1259,7 +1287,7 @@
           </div>
           <div class="project-image">
             <a href="https://github.com/ngwanelegacie/us-household-income-sql" target="_blank" rel="noopener noreferrer">
-              <img src="https://via.placeholder.com/600x400/64ffda/0a192f?text=SQL+Analysis" alt="US Household Income SQL Analysis" />
+              <img src="assets/images/us-household-income-preview.jpg" alt="US Household Income SQL Analysis" />
             </a>
           </div>
         </li>
@@ -1289,7 +1317,7 @@
           </div>
           <div class="project-image">
             <a href="https://github.com/ngwanelegacie/world-life-expectancy-sql" target="_blank" rel="noopener noreferrer">
-              <img src="https://via.placeholder.com/600x400/64ffda/0a192f?text=Life+Expectancy" alt="World Life Expectancy SQL Analysis" />
+              <img src="assets/images/world-life-expectancy-preview.jpg" alt="World Life Expectancy SQL Analysis" />
             </a>
           </div>
         </li>
