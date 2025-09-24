@@ -114,6 +114,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex: 0 0 auto;
     }
 
     .logo a {
@@ -131,6 +132,9 @@
     nav {
       display: flex;
       align-items: center;
+      flex: 1;
+      justify-content: center;
+      min-height: 100%;
     }
 
     .nav-links {
@@ -139,6 +143,8 @@
       list-style: none;
       margin: 0;
       padding: 0;
+      counter-reset: item 0;
+      min-height: 100%;
     }
 
     .nav-links li {
@@ -146,6 +152,8 @@
       position: relative;
       counter-increment: item 1;
       font-size: var(--fz-xs);
+      display: flex;
+      align-items: center;
     }
 
     .nav-links a {
@@ -153,6 +161,9 @@
       text-decoration: none;
       color: var(--lightest-slate);
       transition: var(--transition);
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
     }
 
     .nav-links a:before {
@@ -168,6 +179,13 @@
       color: var(--green);
     }
 
+    .nav-resume {
+      display: flex;
+      align-items: center;
+      flex: 0 0 auto;
+      min-height: 100%;
+    }
+
     .resume-button {
       color: var(--green);
       background-color: transparent;
@@ -180,7 +198,6 @@
       text-decoration: none;
       cursor: pointer;
       transition: var(--transition);
-      margin-left: 15px;
     }
 
     .resume-button:hover,
@@ -1143,8 +1160,10 @@
         <li><a href="#projects">Work</a></li>
         <li><a href="#contact">Contact</a></li>
       </ol>
-      <a href="/resume.pdf" class="resume-button">Resume</a>
     </nav>
+    <div class="nav-resume">
+      <a href="assets/Vusumuzi_Nkosi_CV.pdf" class="resume-button" target="_blank">Resume</a>
+    </div>
   </header>
 
   <div class="social">
