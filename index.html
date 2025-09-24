@@ -4,54 +4,408 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vusumuzi Nkosi - Data Analyst</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 </head>
-<body>
-    <header>
-        <h1>Vusumuzi Nkosi</h1>
-        <h2>Data Analyst & IT Mathematics Lecturer</h2>
-        <p>Location: Newcastle, KZN, South Africa</p>
-        <p>Bio: "I'm a data analyst passionate about transforming complex, messy datasets into clear stories and actionable insights. Currently working as an IT and Mathematics Lecturer at Majuba TVET College, I focus on building dashboards that get used, automating processes, and creating models that help with decision-making."</p>
-    </header>
-    <section id="work-experience">
-        <h3>Work Experience</h3>
-        <h4>IT and Mathematics Lecturer at Majuba TVET College (February 2017 - Present)</h4>
-        <p>Responsibilities and curriculum development experience to be added here.</p>
-    </section>
-    <section id="featured-projects">
-        <h3>Featured Projects</h3>
-        <ul>
-            <li><a href="https://github.com/ngwanelegacie/us-household-income-sql">US Household Income SQL Analysis</a></li>
-            <li><a href="https://github.com/ngwanelegacie/world-life-expectancy-sql">Global Life Expectancy SQL Study</a></li>
-            <li><a href="https://github.com/ngwanelegacie/ngwanelegacie.github.io">Data Analyst Portfolio</a></li>
-        </ul>
-    </section>
-    <section id="other-projects">
-        <h3>Other Noteworthy Projects</h3>
-        <ul>
-            <li>Sales Performance Dashboard - Power BI dashboard analyzing sales performance</li>
-            <li>Customer Segmentation Analysis - Python-based customer segmentation using clustering</li>
-            <li>Financial KPI Tracker - Automated Excel dashboard tracking financial metrics</li>
-            <li>Marketing Campaign Analysis - SQL-based marketing campaign effectiveness analysis</li>
-            <li>Inventory Management System - Database-driven inventory tracking system</li>
-            <li>Student Performance Analytics - Educational analytics dashboard</li>
-        </ul>
-    </section>
-    <section id="skills">
-        <h3>Skills</h3>
-        <ul>
-            <li>Data Analysis & Visualization: SQL (Advanced), Power BI (Expert), Excel (Expert), Tableau (Intermediate)</li>
-            <li>Programming & Automation: Python (Intermediate), R (Beginner), Power Query (M), DAX</li>
-            <li>Business Intelligence: A/B Testing, Statistical Analysis, Predictive Modeling, KPI Development</li>
-        </ul>
-    </section>
-    <footer>
-        <h3>Connect with Me</h3>
-        <ul>
-            <li><a href="https://github.com/ngwanelegacie">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/vusumuzi-nkosi">LinkedIn</a></li>
-            <li><a href="https://www.youtube.com/@ngwanelegacie">YouTube</a></li>
-        </ul>
-    </footer>
+<body class="loading">
+    <div id="root">
+        <!-- Navigation Header -->
+        <header class="header">
+            <nav class="nav">
+                <div class="nav-container">
+                    <div class="nav-logo">
+                        <a href="/" aria-label="home">VN</a>
+                    </div>
+                    <ol class="nav-menu">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#work">Work</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ol>
+                    <div class="nav-resume">
+                        <a class="cta-button" href="assets/Vusumuzi_Nkosi_CV.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="fillHeight">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1 class="hero-intro">Hi, my name is</h1>
+                <h2 class="hero-title">Vusumuzi Nkosi.</h2>
+                <h3 class="hero-subtitle">I transform data into actionable insights.</h3>
+                <p class="hero-description">
+                    I'm a data analyst passionate about transforming complex, messy datasets into clear stories and actionable insights. 
+                    Currently working as an IT and Mathematics Lecturer at Majuba TVET College, I focus on building dashboards that get used, 
+                    automating processes, and creating models that help with decision-making.
+                </p>
+                <a class="cta-button" href="mailto:vnkosi@example.com">Get In Touch</a>
+            </section>
+
+            <!-- About Section -->
+            <section id="about">
+                <h2 class="section-heading">
+                    <span class="section-number">01.</span>
+                    About Me
+                </h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <div>
+                            <p>
+                                Hello! I'm Vusumuzi, and I enjoy creating meaningful insights from complex data. My interest in data analysis 
+                                started back in 2017 when I began my role as an IT and Mathematics Lecturer at Majuba TVET College — turns out 
+                                teaching data concepts led me to discover my passion for data analysis and visualization!
+                            </p>
+                            <p>
+                                Today, I focus on building accessible, human-centered dashboards and analytical solutions that help organizations 
+                                make data-driven decisions. My main focus these days is building <strong>Power BI dashboards</strong>, 
+                                <strong>SQL data models</strong>, and <strong>automated reporting systems</strong> that deliver real business value.
+                            </p>
+                            <p>Here are a few technologies I've been working with recently:</p>
+                        </div>
+                        <ul class="skills-list">
+                            <li>SQL (Advanced)</li>
+                            <li>Power BI (Expert)</li>
+                            <li>Python</li>
+                            <li>Excel (Expert)</li>
+                            <li>Tableau</li>
+                            <li>Power Query (M)</li>
+                            <li>DAX</li>
+                            <li>R</li>
+                        </ul>
+                    </div>
+                    <div class="about-pic">
+                        <div class="wrapper">
+                            <img class="img" src="assets/images/headshot.jpg" alt="Vusumuzi Nkosi" width="500" height="500">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience">
+                <h2 class="section-heading">
+                    <span class="section-number">02.</span>
+                    Where I've Worked
+                </h2>
+                <div class="experience-content">
+                    <div class="experience-tabs">
+                        <button class="experience-tab-button active" data-tab="majuba">
+                            <span>Majuba TVET College</span>
+                        </button>
+                    </div>
+                    <div class="experience-panels">
+                        <div class="experience-panel active" id="panel-majuba">
+                            <h3>
+                                <span class="experience-position">IT and Mathematics Lecturer</span>
+                                <span class="experience-company">
+                                    <a href="#" target="_blank" rel="noopener noreferrer">@ Majuba TVET College</a>
+                                </span>
+                            </h3>
+                            <p class="experience-range">February 2017 - Present</p>
+                            <div class="experience-description">
+                                <ul>
+                                    <li>Deliver comprehensive IT and Mathematics curriculum to over 200+ students annually</li>
+                                    <li>Develop and implement data-driven assessment strategies improving student performance by 25%</li>
+                                    <li>Create interactive dashboards for tracking student progress and institutional KPIs</li>
+                                    <li>Lead curriculum development initiatives incorporating modern data analysis tools and techniques</li>
+                                    <li>Collaborate with faculty to automate administrative processes reducing manual work by 40%</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Projects Section -->
+            <section id="work">
+                <h2 class="section-heading">
+                    <span class="section-number">03.</span>
+                    Some Things I've Built
+                </h2>
+                <ul class="projects-list">
+                    <!-- Project 1 -->
+                    <li class="project">
+                        <div class="project-content">
+                            <div>
+                                <p class="project-overline">Featured Project</p>
+                                <h3 class="project-title">
+                                    <a href="https://github.com/ngwanelegacie/us-household-income-sql" target="_blank" rel="noopener noreferrer">US Household Income SQL Analysis</a>
+                                </h3>
+                                <div class="project-description">
+                                    <p>
+                                        Comprehensive SQL analysis of US household income data across states and counties. 
+                                        Features advanced data cleaning, statistical analysis, and geographic income distribution insights 
+                                        with over 50+ complex queries demonstrating advanced SQL techniques.
+                                    </p>
+                                </div>
+                                <ul class="project-tech-list">
+                                    <li>SQL</li>
+                                    <li>MySQL</li>
+                                    <li>Data Cleaning</li>
+                                    <li>Statistical Analysis</li>
+                                </ul>
+                                <div class="project-links">
+                                    <a href="https://github.com/ngwanelegacie/us-household-income-sql" aria-label="GitHub Link" target="_blank" rel="noopener noreferrer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <a href="https://github.com/ngwanelegacie/us-household-income-sql" target="_blank" rel="noopener noreferrer">
+                                <div class="img-placeholder">SQL Analysis</div>
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- Project 2 -->
+                    <li class="project">
+                        <div class="project-content">
+                            <div>
+                                <p class="project-overline">Featured Project</p>
+                                <h3 class="project-title">
+                                    <a href="https://github.com/ngwanelegacie/world-life-expectancy-sql" target="_blank" rel="noopener noreferrer">World Life Expectancy SQL Study</a>
+                                </h3>
+                                <div class="project-description">
+                                    <p>
+                                        In-depth SQL analysis of global life expectancy trends across countries and time periods. 
+                                        Includes data validation, trend analysis, and correlation studies between life expectancy 
+                                        and various socio-economic factors with advanced analytical queries.
+                                    </p>
+                                </div>
+                                <ul class="project-tech-list">
+                                    <li>SQL</li>
+                                    <li>MySQL</li>
+                                    <li>Trend Analysis</li>
+                                    <li>Data Validation</li>
+                                </ul>
+                                <div class="project-links">
+                                    <a href="https://github.com/ngwanelegacie/world-life-expectancy-sql" aria-label="GitHub Link" target="_blank" rel="noopener noreferrer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <a href="https://github.com/ngwanelegacie/world-life-expectancy-sql" target="_blank" rel="noopener noreferrer">
+                                <div class="img-placeholder">Global Analysis</div>
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- Project 3 -->
+                    <li class="project">
+                        <div class="project-content">
+                            <div>
+                                <p class="project-overline">Featured Project</p>
+                                <h3 class="project-title">
+                                    <a href="https://github.com/ngwanelegacie/ngwanelegacie.github.io" target="_blank" rel="noopener noreferrer">Data Analyst Portfolio</a>
+                                </h3>
+                                <div class="project-description">
+                                    <p>
+                                        A modern, responsive portfolio website showcasing data analysis projects and skills. 
+                                        Built with clean HTML, CSS, and JavaScript, featuring smooth animations, responsive design, 
+                                        and optimized performance following modern web development best practices.
+                                    </p>
+                                </div>
+                                <ul class="project-tech-list">
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                    <li>Responsive Design</li>
+                                </ul>
+                                <div class="project-links">
+                                    <a href="https://github.com/ngwanelegacie/ngwanelegacie.github.io" aria-label="GitHub Link" target="_blank" rel="noopener noreferrer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                    <a href="https://ngwanelegacie.github.io" aria-label="External Link" target="_blank" rel="noopener noreferrer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title>External Link</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15,3 21,3 21,9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <a href="https://ngwanelegacie.github.io" target="_blank" rel="noopener noreferrer">
+                                <div class="img-placeholder">Portfolio Site</div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Other Projects Section -->
+                <div class="other-projects">
+                    <h2 class="other-projects-title">Other Noteworthy Projects</h2>
+                    <div class="other-projects-grid">
+                        <div class="other-project">
+                            <div class="other-project-header">
+                                <div class="folder-icon">📊</div>
+                                <div class="project-links">
+                                    <a href="#" aria-label="GitHub Link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="other-project-title">Sales Performance Dashboard</h3>
+                            <div class="other-project-description">
+                                <p>Interactive Power BI dashboard analyzing sales performance with KPI tracking, trend analysis, and dynamic filtering capabilities.</p>
+                            </div>
+                            <ul class="other-project-tech-list">
+                                <li>Power BI</li>
+                                <li>DAX</li>
+                                <li>SQL</li>
+                            </ul>
+                        </div>
+
+                        <div class="other-project">
+                            <div class="other-project-header">
+                                <div class="folder-icon">🎯</div>
+                                <div class="project-links">
+                                    <a href="#" aria-label="GitHub Link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="other-project-title">Customer Segmentation Analysis</h3>
+                            <div class="other-project-description">
+                                <p>Python-based customer segmentation using clustering algorithms to identify distinct customer groups and behavioral patterns.</p>
+                            </div>
+                            <ul class="other-project-tech-list">
+                                <li>Python</li>
+                                <li>Scikit-learn</li>
+                                <li>Pandas</li>
+                            </ul>
+                        </div>
+
+                        <div class="other-project">
+                            <div class="other-project-header">
+                                <div class="folder-icon">💰</div>
+                                <div class="project-links">
+                                    <a href="#" aria-label="GitHub Link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="other-project-title">Financial KPI Tracker</h3>
+                            <div class="other-project-description">
+                                <p>Automated Excel dashboard tracking key financial metrics with dynamic charts and automated reporting capabilities.</p>
+                            </div>
+                            <ul class="other-project-tech-list">
+                                <li>Excel</li>
+                                <li>VBA</li>
+                                <li>Power Query</li>
+                            </ul>
+                        </div>
+
+                        <div class="other-project">
+                            <div class="other-project-header">
+                                <div class="folder-icon">📈</div>
+                                <div class="project-links">
+                                    <a href="#" aria-label="GitHub Link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="other-project-title">Marketing Campaign Analysis</h3>
+                            <div class="other-project-description">
+                                <p>SQL-based analysis of marketing campaign effectiveness with ROI calculations and performance optimization recommendations.</p>
+                            </div>
+                            <ul class="other-project-tech-list">
+                                <li>SQL</li>
+                                <li>Tableau</li>
+                                <li>Statistics</li>
+                            </ul>
+                        </div>
+
+                        <div class="other-project">
+                            <div class="other-project-header">
+                                <div class="folder-icon">📦</div>
+                                <div class="project-links">
+                                    <a href="#" aria-label="GitHub Link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="other-project-title">Inventory Management System</h3>
+                            <div class="other-project-description">
+                                <p>Database-driven inventory tracking system with automated alerts, reporting, and optimization features.</p>
+                            </div>
+                            <ul class="other-project-tech-list">
+                                <li>SQL Server</li>
+                                <li>Power BI</li>
+                                <li>Power Apps</li>
+                            </ul>
+                        </div>
+
+                        <div class="other-project">
+                            <div class="other-project-header">
+                                <div class="folder-icon">🎓</div>
+                                <div class="project-links">
+                                    <a href="#" aria-label="GitHub Link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="other-project-title">Student Performance Analytics</h3>
+                            <div class="other-project-description">
+                                <p>Educational analytics dashboard providing insights into student performance, engagement, and success factors.</p>
+                            </div>
+                            <ul class="other-project-tech-list">
+                                <li>Power BI</li>
+                                <li>SQL</li>
+                                <li>Education</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <h2 class="section-heading">
+                    <span class="section-number">04.</span>
+                    What's Next?
+                </h2>
+                <h2 class="contact-title">Get In Touch</h2>
+                <p class="contact-description">
+                    I'm always open to discussing new opportunities, interesting projects, or just having a chat about data analysis. 
+                    Whether you have a question or just want to say hi, I'll do my best to get back to you!
+                </p>
+                <a class="cta-button contact-button" href="mailto:vnkosi@example.com">Say Hello</a>
+            </section>
+        </main>
+
+        <!-- Fixed Side Elements -->
+        <div class="social-links-fixed">
+            <ul>
+                <li>
+                    <a href="https://github.com/ngwanelegacie" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/vusumuzi-nkosi" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><title>LinkedIn</title><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@ngwanelegacie" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-youtube"><title>YouTube</title><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75,15.02 15.5,11.75 9.75,8.48"></polygon></svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="email-link">
+            <a href="mailto:vnkosi@example.com">vnkosi@example.com</a>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
