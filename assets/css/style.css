@@ -1756,3 +1756,8 @@ main {
 .other-project-tech-list li:last-of-type {
   margin-right: 0;
 }
+
+/* Remove auto-numbering from Resume button */
+.nav-cv-button::before {
+  content: none !important;
+}
