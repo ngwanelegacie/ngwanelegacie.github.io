@@ -213,6 +213,242 @@ h6 {
   max-width: 1000px;
 }
 
+/* Navigation Header */
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 11;
+  padding: 0px 50px;
+  width: 100%;
+  height: var(--nav-height);
+  background-color: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+  filter: none !important;
+  pointer-events: auto !important;
+  user-select: auto !important;
+}
+
+@media (max-width: 1080px) {
+  .nav-header {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-header {
+    padding: 0 25px;
+  }
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: var(--lightest-slate);
+  font-family: var(--font-mono);
+  counter-reset: item 0;
+  z-index: 12;
+}
+
+.nav-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-logo a {
+  color: var(--green);
+  text-decoration: none;
+  display: block;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+  border: 2px solid var(--green);
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.nav-logo a:hover,
+.nav-logo a:focus {
+  background-color: var(--green-tint);
+  transform: translate(-4px, -4px);
+  box-shadow: 4px 4px 0 0 var(--green);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu ol {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav-menu li {
+  margin: 0 5px;
+  position: relative;
+  counter-increment: item 1;
+  font-size: var(--fz-xs);
+}
+
+.nav-menu a {
+  padding: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+.nav-menu a:before {
+  content: "0" counter(item) ".";
+  margin-right: 5px;
+  color: var(--green);
+  font-size: var(--fz-xxs);
+  text-align: right;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+  color: var(--green);
+}
+
+.nav-resume .cta-button {
+  margin-top: 0;
+  margin-left: 15px;
+  font-size: var(--fz-xs);
+}
+
+@media (max-width: 768px) {
+  .nav-header {
+    height: var(--nav-scroll-height);
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+  
+  .nav-resume {
+    display: none;
+  }
+}
+
+/* Side Elements */
+.fixed-social {
+  width: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 40px;
+  right: auto;
+  z-index: 10;
+  color: var(--light-slate);
+}
+
+@media (max-width: 1080px) {
+  .fixed-social {
+    left: 20px;
+    right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .fixed-social {
+    display: none;
+  }
+}
+
+.fixed-social:after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0 auto;
+  background-color: var(--light-slate);
+}
+
+.fixed-social ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fixed-social ul:after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 90px;
+  background-color: var(--light-slate);
+}
+
+.fixed-social li {
+  position: relative;
+}
+
+.fixed-social a {
+  padding: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+  writing-mode: vertical-rl;
+  font-family: var(--font-mono);
+  font-size: var(--fz-xxs);
+  line-height: var(--fz-lg);
+  letter-spacing: 0.1em;
+}
+
+.fixed-social a:hover,
+.fixed-social a:focus {
+  transform: translateY(-3px);
+  color: var(--green);
+}
+
+.fixed-social svg {
+  width: 20px;
+  height: 20px;
+  transform: translateY(-4px);
+}
+
+/* Main Content */
+main {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1600px;
+  min-height: 100vh;
+  padding: 0 150px;
+}
+
+@media (max-width: 1080px) {
+  main {
+    padding: 0 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 0 25px;
+  }
+}
+
 /* Mixed Mixins */
 .button {
   color: var(--green);
@@ -488,6 +724,13 @@ h6 {
   flex-direction: column;
   min-height: 100vh;
   padding: 0;
+  padding-top: var(--nav-height);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: var(--nav-scroll-height);
+  }
 }
 
 @media (max-width: 480px) and (max-height: 700px) {
