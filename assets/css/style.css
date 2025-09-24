@@ -909,42 +909,87 @@ main {
   }
 }
 
-.about .about-content .about-pic .pic-wrapper {
+.about .about-content .about-pic .wrapper {
   display: block;
   position: relative;
   width: 100%;
   border-radius: var(--border-radius);
   background-color: var(--green);
+  transition: var(--transition);
 }
 
-.about .about-content .about-pic .pic-wrapper:hover,
-.about .about-content .about-pic .pic-wrapper:focus {
+.about .about-content .about-pic .wrapper:hover,
+.about .about-content .about-pic .wrapper:focus {
   background: transparent;
   outline: 0;
 }
 
-.about .about-content .about-pic .pic-wrapper:hover:after,
-.about .about-content .about-pic .pic-wrapper:focus:after {
+.about .about-content .about-pic .wrapper:hover:after,
+.about .about-content .about-pic .wrapper:focus:after {
   top: 15px;
   left: 15px;
 }
 
-.about .about-content .about-pic .pic-wrapper:hover .img,
-.about .about-content .about-pic .pic-wrapper:focus .img {
+.about .about-content .about-pic .wrapper:hover .img,
+.about .about-content .about-pic .wrapper:focus .img {
   filter: none;
   mix-blend-mode: normal;
 }
 
-.about .about-content .about-pic .pic-wrapper .img {
+.about .about-content .about-pic .wrapper .img {
   position: relative;
   border-radius: var(--border-radius);
   mix-blend-mode: multiply;
   filter: grayscale(100%) contrast(1);
   transition: var(--transition);
+  width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
-.about .about-content .about-pic .pic-wrapper:before,
-.about .about-content .about-pic .pic-wrapper:after {
+/* Image placeholder styles */
+.about .about-content .about-pic .img-placeholder {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border-radius: var(--border-radius);
+  background-color: var(--light-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid var(--green);
+  transition: var(--transition);
+}
+
+.about .about-content .about-pic .wrapper:hover .img-placeholder {
+  border-color: var(--lightest-slate);
+  background-color: var(--navy);
+}
+
+.about .about-content .about-pic .img-placeholder .placeholder-content {
+  text-align: center;
+}
+
+.about .about-content .about-pic .img-placeholder svg {
+  margin-bottom: 20px;
+  opacity: 0.7;
+  transition: var(--transition);
+}
+
+.about .about-content .about-pic .wrapper:hover .img-placeholder svg {
+  opacity: 1;
+}
+
+.about .about-content .about-pic .img-placeholder p {
+  color: var(--light-slate);
+  font-family: var(--font-mono);
+  font-size: var(--fz-sm);
+  margin: 0;
+}
+
+.about .about-content .about-pic .wrapper:before,
+.about .about-content .about-pic .wrapper:after {
   content: '';
   display: block;
   position: absolute;
