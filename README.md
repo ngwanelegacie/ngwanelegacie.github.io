@@ -59,3 +59,27 @@ Open the `index.html` file and begin personalizing it. The file contains helpful
 - Create your favicon and add it to the root folder.
 
 Once you commit your changes, your new portfolio website will be live at `https://your-username.github.io` within a few minutes!
+
+## 🔄 Repository Management
+
+### Remerging Previous Pull Requests
+
+If you need to remerge a previous pull request (like the v4 redesign from PR #9), this repository includes comprehensive guidance:
+
+- **[REMERGE_GUIDE.md](REMERGE_GUIDE.md)** - Complete documentation on different remerge approaches
+- **[scripts/remerge-pr.sh](scripts/remerge-pr.sh)** - Interactive script to automate the remerge process
+
+**Quick start:**
+```bash
+# Run the interactive remerge script
+./scripts/remerge-pr.sh
+
+# Or read the comprehensive guide first
+cat REMERGE_GUIDE.md
+```
+
+Common scenarios covered:
+- Reapplying changes that were reverted
+- Creating new branches with previous PR changes
+- Cherry-picking specific commits
+- Handling merge conflicts during remerge
