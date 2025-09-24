@@ -3,53 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            padding: 10px;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-        nav ul li {
-            margin-right: 20px;
-            color: white;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-        }
-        .resume-button {
-            background-color: #007BFF;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li>01. <a href="#home">Home</a></li>
-            <li>02. <a href="#about">About</a></li>
-            <li>03. <a href="#services">Services</a></li>
-            <li>04. <a href="#contact">Contact</a></li>
-        </ul>
-        <button class="resume-button">Resume</button>
-    </nav>
-    <h1>Welcome to My Website</h1>
-    <p>This is a sample website.</p>
+    <header>
+        <nav style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo">
+                <img src="assets/logo.png" alt="VN Logo" />
+            </div>
+            <ul style="display: flex; list-style-type: none; margin: 0; padding: 0;">
+                <li>1. Home</li>
+                <li>2. About</li>
+                <li>3. Experience</li>
+                <li>4. Work</li>
+                <li>5. Contact</li>
+            </ul>
+            <a href="assets/Vusumuzi_Nkosi_CV.pdf" target="_blank" style="margin-left: auto;">Resume</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Hi, my name is Vusumuzi Nkosi</h1>
+        <p>Data Analyst | SQL Specialist | Data Visualization Expert</p>
+    </section>
+    <section class="about">
+        <h2>About Me</h2>
+        <p>Skills: SQL, Data Visualization, Data Analysis</p>
+        <p>Description: I am a passionate data analyst with experience in SQL and data visualization.</p>
+    </section>
+    <section class="experience">
+        <h2>Experience</h2>
+        <p>IT and Mathematics Lecturer at Majuba TVET College</p>
+    </section>
+    <section class="work">
+        <h2>My Work</h2>
+        <p>US Household Income SQL Analysis</p>
+        <p>World Life Expectancy SQL Analysis</p>
+    </section>
+    <section class="contact">
+        <h2>Get In Touch</h2>
+        <p>Email: example@example.com</p>
+    </section>
+    <footer>
+        <p>&copy; 2023 Vusumuzi Nkosi</p>
+    </footer>
 </body>
 </html>
