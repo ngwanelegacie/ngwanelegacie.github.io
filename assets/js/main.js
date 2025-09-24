@@ -13,6 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
+                
+                // Update active navigation item
+                document.querySelectorAll('nav ul li a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
             }
         });
     });
@@ -26,13 +32,66 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Add active class to current navigation item
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('nav ul li a').forEach(link => {
-        const linkPage = link.getAttribute('href').split('/').pop() || 'index.html';
-        if (linkPage === currentPage) {
-            link.classList.add('active');
-        }
+    // Add active class to current navigation item based on scroll position
+    function updateActiveNavigation() {
+        const sections = document.querySelectorAll('.section[id]');
+        const navLinks = document.querySelectorAll('nav ul li a');
+        
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (scrollY >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Update navigation on scroll
+    window.addEventListener('scroll', updateActiveNavigation);
+    updateActiveNavigation(); // Initialize
+
+    // Lazy loading for images
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.addEventListener('load', () => {
+                        img.classList.add('loaded');
+                    });
+                    if (img.complete) {
+                        img.classList.add('loaded');
+                    }
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        lazyImages.forEach(img => imageObserver.observe(img));
+    } else {
+        // Fallback for browsers without IntersectionObserver
+        lazyImages.forEach(img => img.classList.add('loaded'));
+    }
+
+    // Add hover effects to project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-12px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
     });
 
     // Project page specific functionality
