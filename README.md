@@ -1,4 +1,4 @@
-# Vusumuzi Nkosi - Data Analysis Portfolio
+# Vusumuzi Nkosi - Data Analyst Portfolio
 
 Welcome! This repository contains my professional, one-page data analysis portfolio website, hosted for free on GitHub Pages. I'm a data analyst specializing in SQL, data visualization, and turning complex datasets into actionable business insights.
 
