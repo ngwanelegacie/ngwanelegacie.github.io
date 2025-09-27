@@ -482,6 +482,13 @@ main {
   z-index: 10;
   writing-mode: vertical-rl;
   text-orientation: upright;
+  opacity: 0.7;
+  transition: var(--transition), opacity 0.3s ease;
+}
+
+.email-link.scrolled {
+  opacity: 1;
+  transform: translateX(-5px);
 }
 
 @media (max-width: 1080px) {
@@ -527,6 +534,13 @@ main {
   left: 40px;
   z-index: 10;
   width: auto;
+  opacity: 0.7;
+  transition: var(--transition), opacity 0.3s ease, transform 0.3s ease;
+}
+
+.social-links-fixed.scrolled {
+  opacity: 1;
+  transform: translateX(5px);
 }
 
 @media (max-width: 1080px) {
@@ -1760,4 +1774,49 @@ main {
 /* Remove auto-numbering from Resume button */
 .nav-cv-button::before {
   content: none !important;
+}
+
+/* Show More Button */
+.show-more-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.show-more-btn {
+  background: transparent;
+  border: 1px solid var(--green);
+  border-radius: var(--border-radius);
+  padding: 1.25rem 1.75rem;
+  font-size: var(--fz-xs);
+  font-family: var(--font-mono);
+  color: var(--green);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.show-more-btn:hover,
+.show-more-btn:focus {
+  background-color: var(--green-tint);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* Additional projects that will be shown/hidden */
+.additional-projects {
+  display: none;
+  margin-top: 15px;
+}
+
+.additional-projects.show {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+@media (max-width: 1080px) {
+  .additional-projects.show {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 }

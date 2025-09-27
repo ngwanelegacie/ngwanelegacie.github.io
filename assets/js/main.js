@@ -159,10 +159,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Header background opacity on scroll
     const header = document.querySelector('.header');
+    const socialLinksFixed = document.querySelector('.social-links-fixed');
+    const emailLinkContainer = document.querySelector('.email-link');
+    
     if (header) {
         window.addEventListener('scroll', function() {
             const scrolled = window.scrollY;
-            const rate = scrolled * -0.5;
             
             if (scrolled > 50) {
                 header.style.backgroundColor = 'rgba(10, 25, 47, 0.95)';
@@ -170,6 +172,15 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 header.style.backgroundColor = 'rgba(10, 25, 47, 0.85)';
                 header.style.backdropFilter = 'blur(10px)';
+            }
+            
+            // Make side elements more dynamic based on scroll
+            if (scrolled > 100) {
+                if (socialLinksFixed) socialLinksFixed.classList.add('scrolled');
+                if (emailLinkContainer) emailLinkContainer.classList.add('scrolled');
+            } else {
+                if (socialLinksFixed) socialLinksFixed.classList.remove('scrolled');
+                if (emailLinkContainer) emailLinkContainer.classList.remove('scrolled');
             }
         });
     }
@@ -215,6 +226,38 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transform = '';
         });
     });
+
+    // Show More Projects functionality
+    const showMoreBtn = document.querySelector('.show-more-btn');
+    const additionalProjects = document.querySelector('#additional-projects');
+    
+    if (showMoreBtn && additionalProjects) {
+        showMoreBtn.addEventListener('click', function() {
+            if (additionalProjects.classList.contains('show')) {
+                // Hide additional projects
+                additionalProjects.classList.remove('show');
+                showMoreBtn.textContent = 'Show More';
+                
+                // Smooth scroll to projects section
+                document.querySelector('.other-projects-title').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            } else {
+                // Show additional projects
+                additionalProjects.classList.add('show');
+                showMoreBtn.textContent = 'Show Less';
+                
+                // Small delay to allow for animation, then scroll
+                setTimeout(() => {
+                    showMoreBtn.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }, 300);
+            }
+        });
+    }
 
     // Initialize any additional animations or effects
     console.log('Brittany Chiang-inspired portfolio loaded successfully!');
