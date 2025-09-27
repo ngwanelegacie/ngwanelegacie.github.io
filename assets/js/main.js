@@ -157,15 +157,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Header background opacity on scroll
+    // Dynamic header behavior on scroll
     const header = document.querySelector('.header');
     const socialLinksFixed = document.querySelector('.social-links-fixed');
     const emailLinkContainer = document.querySelector('.email-link');
+    
+    let lastScrollTop = 0;
+    const scrollThreshold = 100; // Minimum scroll distance before hiding header
     
     if (header) {
         window.addEventListener('scroll', function() {
             const scrolled = window.scrollY;
             
+            // Change background opacity based on scroll position
             if (scrolled > 50) {
                 header.style.backgroundColor = 'rgba(10, 25, 47, 0.95)';
                 header.style.backdropFilter = 'blur(10px)';
@@ -173,6 +177,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 header.style.backgroundColor = 'rgba(10, 25, 47, 0.85)';
                 header.style.backdropFilter = 'blur(10px)';
             }
+            
+            // Dynamic header hide/show behavior
+            if (scrolled > scrollThreshold) {
+                if (scrolled > lastScrollTop && scrolled > scrollThreshold) {
+                    // Scrolling down - hide header
+                    header.classList.add('header-hidden');
+                } else if (scrolled < lastScrollTop) {
+                    // Scrolling up - show header
+                    header.classList.remove('header-hidden');
+                }
+            } else {
+                // Always show header when near top of page
+                header.classList.remove('header-hidden');
+            }
+            
+            lastScrollTop = scrolled;
             
             // Make side elements more dynamic based on scroll
             if (scrolled > 100) {
