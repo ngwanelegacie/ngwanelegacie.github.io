@@ -1376,6 +1376,131 @@ main {
   transition: var(--transition);
 }
 
+/* Experience section */
+.experience {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+@media (max-width: 768px) {
+  .experience {
+    padding: 60px 0;
+  }
+}
+
+.experience-content {
+  margin-top: 40px;
+}
+
+.experience-item {
+  position: relative;
+  padding-left: 30px;
+  border-left: 2px solid var(--green);
+  margin-bottom: 40px;
+}
+
+.experience-title {
+  color: var(--lightest-slate);
+  font-size: var(--fz-xxl);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.experience-company {
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: var(--fz-sm);
+  margin-bottom: 4px;
+}
+
+.experience-range {
+  color: var(--light-slate);
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+  margin-bottom: 20px;
+}
+
+.experience-list {
+  list-style: none;
+  padding: 0;
+}
+
+.experience-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  color: var(--slate);
+  font-size: var(--fz-md);
+  line-height: 1.5;
+}
+
+.experience-list li:before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-size: var(--fz-sm);
+}
+
+/* Certifications */
+.certifications {
+  margin-top: 50px;
+}
+
+.certifications-title {
+  color: var(--lightest-slate);
+  font-size: var(--fz-xl);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.certifications-list {
+  list-style: none;
+  padding: 0;
+}
+
+.certifications-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  margin-bottom: 8px;
+  background-color: var(--light-navy);
+  border-radius: var(--border-radius);
+  border-left: 3px solid var(--green);
+  transition: var(--transition);
+}
+
+.certifications-list li:hover {
+  transform: translateX(5px);
+}
+
+.cert-name {
+  color: var(--lightest-slate);
+  font-size: var(--fz-md);
+  font-weight: 500;
+}
+
+.cert-org {
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+  white-space: nowrap;
+  margin-left: 20px;
+}
+
+@media (max-width: 480px) {
+  .certifications-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cert-org {
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}
+
 /* Contact section */
 .contact {
   max-width: 600px;
