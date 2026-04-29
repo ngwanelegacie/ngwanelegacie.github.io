@@ -1312,7 +1312,7 @@ main {
 .work .projects-list .project .project-image a {
   width: 100%;
   height: 100%;
-  background-color: var(--green);
+  background-color: transparent;
   border-radius: var(--border-radius);
   vertical-align: middle;
   display: block;
@@ -1343,16 +1343,16 @@ main {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--navy);
-  mix-blend-mode: screen;
+  background-color: transparent;
+  mix-blend-mode: normal;
   transition: var(--transition);
 }
 
 .work .projects-list .project .project-image .img,
 .work .projects-list .project .project-image img {
   border-radius: var(--border-radius);
-  mix-blend-mode: multiply;
-  filter: grayscale(100%) contrast(1) brightness(90%);
+  mix-blend-mode: normal;
+  filter: none;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1365,7 +1365,7 @@ main {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    filter: grayscale(100%) contrast(1) brightness(50%);
+    filter: brightness(50%);
   }
 }
 
