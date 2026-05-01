@@ -22,7 +22,7 @@
 
 Data science postgraduate student (STADIO, NQF 8) and ALX Data Science graduate with **9+ years in mathematics education**. I build machine learning models, write SQL, create dashboards, and turn messy data into stories that drive decisions.
 
-My teaching background is my superpower — not everyone in data science can break down complex quantitative concepts and communicate them clearly to any audience.
+My teaching background is my superpower - not everyone in data science can break down complex quantitative concepts and communicate them clearly to any audience.
 
 ---
 
