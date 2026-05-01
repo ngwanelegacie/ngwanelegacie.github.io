@@ -32,7 +32,7 @@ My teaching background is my superpower - not everyone in data science can break
   <tr>
     <td width="50%">
       <h3><a href="https://github.com/ngwanelegacie/lending-credit-analysis">Lending Club Loan Default Analysis</a></h3>
-      <p>End-to-end credit risk analysis on <strong>2.26M real Lending Club loans</strong> (2007–2018). Full pipeline across SQL, Python, and Excel — schema design, data cleaning, EDA, ML default prediction (<strong>AUC 0.72</strong>), and <strong>~$95M annual business impact</strong> quantification.</p>
+      <p>End-to-end credit risk analysis on <strong>2.26M real Lending Club loans</strong> (2007–2018). Full pipeline across SQL, Python, and Excel, schema design, data cleaning, EDA, ML default prediction (<strong>AUC 0.72</strong>), and <strong>~$95M annual business impact</strong> quantification.</p>
       <p>
         <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
         <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white" />
