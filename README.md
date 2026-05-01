@@ -42,7 +42,7 @@ My teaching background is my superpower - not everyone in data science can break
     </td>
     <td width="50%">
       <h3><a href="https://github.com/ngwanelegacie/us-household-income-sql">US Household Income SQL Analysis</a></h3>
-      <p>Cleaned and analysed household income data using advanced SQL — joins, window functions, CTEs, and aggregations — uncovering regional income trends and demographic patterns across US states and counties.</p>
+      <p>Cleaned and analysed household income data using advanced SQL, joins, window functions, CTEs, and aggregations, uncovering regional income trends and demographic patterns across US states and counties.</p>
       <p>
         <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white" />
         <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" />
