@@ -53,7 +53,7 @@
                     <li><a href="#work">Work</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ol>
-                <a href="assets/Vusumuzi_Nkosi_Resume.pdf" target="_blank" class="nav-cv-button">Resume</a>
+                <a href="assets/Vusumuzi_Resume.pdf" target="_blank" class="nav-cv-button">Resume</a>
             </div>
         </nav>
     </header>
@@ -128,7 +128,7 @@
                         <p class="experience-range">Feb 2017 — Present</p>
                         <ul class="experience-list">
                             <li>Deliver mathematics and IT instruction to 100+ students annually across multiple cohorts, designing curriculum and assessments aligned with national standards.</li>
-                            <li>Analyse student performance data to identify at-risk learners and adjust teaching strategies and improved pass rates through targeted, data-driven interventions.</li>
+                            <li>Analyse student performance data to identify at-risk learners and adjust teaching strategies — improved pass rates through targeted, data-driven interventions.</li>
                             <li>Developed standardised assessment rubrics adopted across the mathematics department for consistent grading.</li>
                             <li>Mentored students in IT competitions at regional and national level, with multiple teams advancing to national rounds.</li>
                         </ul>
@@ -146,10 +146,10 @@
                     <h3 class="certifications-title">Certifications & Education</h3>
                     <ul class="certifications-list">
                         <li><span class="cert-name">Postgraduate Diploma in Data Science (NQF 8)</span><span class="cert-org">STADIO · In Progress</span></li>
+                        <li><span class="cert-name">BSc Mathematics & Computer Science</span><span class="cert-org">UNISA · 2022–2025</span></li>
                         <li><span class="cert-name">ALX Data Science Programme</span><span class="cert-org">ALX Africa · 2025–2026</span></li>
                         <li><span class="cert-name">Data Analyst Certificate</span><span class="cert-org">ALX Africa · 2025</span></li>
                         <li><span class="cert-name">AI Engineering Bootcamp</span><span class="cert-org">Zero To Mastery · 2025</span></li>
-                        <li><span class="cert-name">BSc Mathematics & Computer Science</span><span class="cert-org">UNISA · 2022–2025</span></li>
                     </ul>
                 </div>
             </div>
@@ -163,7 +163,7 @@
                     Some Things I've Built
                 </h2>
                 <div class="projects-list">
-                   <!-- Project 1: Lending Club Credit Analysis -->
+                    <!-- Project 1: Lending Club Loan Default Analysis -->
                     <div class="project">
                         <div class="project-content">
                             <div>
@@ -175,31 +175,36 @@
                                 </h3>
                                 <div class="project-description">
                                     <p>
-                                        End-to-end credit risk analysis on 2.26M real Lending Club loans. Built a full
-                                        pipeline across SQL, Python, and Excel, from schema design and data cleaning
-                                        through EDA to ML default prediction (AUC 0.72) and ~$95M annual business
-                                        impact quantification.
+                                        End-to-end credit risk pipeline on <strong>2.26M real Lending Club loans</strong> (2007–2018).
+                                        SQL schema design, 151→33 feature cleaning, full EDA, Gradient Boosting model
+                                        (AUC 0.72), and <strong>~$95M/year</strong> in quantified preventable losses.
+                                        Includes an interactive Streamlit app for live predictions.
                                     </p>
                                 </div>
                                 <ul class="project-tech-list">
                                     <li>Python</li>
                                     <li>SQL</li>
                                     <li>scikit-learn</li>
-                                    <li>Gradient Boosting</li>
+                                    <li>Streamlit</li>
+                                    <li>Plotly</li>
                                 </ul>
                                 <div class="project-links">
                                     <a href="https://github.com/ngwanelegacie/lending-credit-analysis" aria-label="GitHub Link" target="_blank">
                                         <i class="fab fa-github"></i>
                                     </a>
+                                    <a href="https://lending-club-app-bnjftcemaxoxqqrhgyhpcr.streamlit.app/" aria-label="Live Demo" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                         <div class="project-image">
-                            <a href="https://github.com/ngwanelegacie/lending-credit-analysis" target="_blank">
+                            <a href="https://lending-club-app-bnjftcemaxoxqqrhgyhpcr.streamlit.app/" target="_blank">
                                 <img src="assets/images/lending-credit-preview.jpg" alt="Lending Club Loan Default Analysis" loading="lazy" />
                             </a>
                         </div>
                     </div>
+
                     <!-- Project 2: US Household Income -->
                     <div class="project">
                         <div class="project-content">
@@ -347,7 +352,5 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
-    <link rel="stylesheet" href="chatbot/chatbot.css">
-    <script src="chatbot/chatbot.js" defer></script>
 </body>
 </html>
