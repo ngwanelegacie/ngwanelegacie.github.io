@@ -11,6 +11,7 @@
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white" />
   <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white" />
+  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" />
   <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=flat-square&logo=power-bi&logoColor=black" />
   <img src="https://img.shields.io/badge/Tableau-E97627?style=flat-square&logo=tableau&logoColor=white" />
   <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" />
@@ -32,12 +33,16 @@ My teaching background is my superpower - not everyone in data science can break
   <tr>
     <td width="50%">
       <h3><a href="https://github.com/ngwanelegacie/lending-credit-analysis">Lending Club Loan Default Analysis</a></h3>
-      <p>End-to-end credit risk analysis on <strong>2.26M real Lending Club loans</strong> (2007–2018). Full pipeline across SQL, Python, and Excel, schema design, data cleaning, EDA, ML default prediction (<strong>AUC 0.72</strong>), and <strong>~$95M annual business impact</strong> quantification.</p>
+      <p>End-to-end credit risk analysis on <strong>2.26M real Lending Club loans</strong> (2007–2018). Full pipeline across SQL, Python, and Excel — schema design, data cleaning, EDA, ML default prediction (<strong>AUC 0.72</strong>), and <strong>~$95M annual business impact</strong> quantification. Includes an <a href="https://lending-club-app-bnjftcemaxoxqqrhgyhpcr.streamlit.app/">interactive Streamlit app</a> for live risk predictions.</p>
       <p>
         <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
         <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white" />
         <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white" />
+        <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" />
         <img src="https://img.shields.io/badge/Excel-217346?style=flat-square&logo=microsoft-excel&logoColor=white" />
+      </p>
+      <p>
+        <a href="https://lending-club-app-bnjftcemaxoxqqrhgyhpcr.streamlit.app/"><img src="https://img.shields.io/badge/Live_Demo-Streamlit_App-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" /></a>
       </p>
     </td>
     <td width="50%">
@@ -81,7 +86,7 @@ My teaching background is my superpower - not everyone in data science can break
 | **Programming** | Python, SQL, R (basic) |
 | **ML & Modelling** | scikit-learn, XGBoost, Gradient Boosting, Random Forest, Logistic Regression, SMOTE, Feature Engineering, Hyperparameter Tuning, Cross-Validation |
 | **Data Analysis** | Pandas, NumPy, EDA, Data Wrangling, Hypothesis Testing, A/B Testing, Correlation & Regression Analysis |
-| **Visualisation & BI** | Matplotlib, Seaborn, Power BI, Tableau, Excel, Dashboard Design, Storytelling with Data |
+| **Visualisation & BI** | Matplotlib, Seaborn, Plotly, Streamlit, Power BI, Tableau, Excel, Dashboard Design, Storytelling with Data |
 | **Tools & Platforms** | Git, Jupyter Notebook, Google Colab, AWS SageMaker, Prompt Engineering, Generative AI |
 
 ---
